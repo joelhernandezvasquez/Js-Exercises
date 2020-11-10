@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <script src="main.js"defer></script>
+    <title>Heroes list</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Heroes List</h1>
+        <p> Filter Heroes based on these attributes</p>
+    </header>
+
+    <section class="filter-container">
+        <div class="attack-type-filter box-filter">
+            <h2>Attack Type</h2>
+                <div class="attribute">
+                   <input type="checkbox" name="melee" id="Melee">
+                   <label> Melee</label>
+                </div>
+                
+                <div class="attribute">
+                    <input type="checkbox" name="ranged" id="Ranged">
+                    <label> Ranged</label>
+                 </div>
+        </div>
+
+        <div class="primary-filter box-filter">
+            <h2>Primary Attribute</h2>
+                <div class="attribute">
+                   <input type="checkbox" name="strength" id="str">
+                   <label> Strength</label>
+                </div>
+                
+                <div class="attribute">
+                    <input type="checkbox" name="agility" id="agi">
+                    <label> Agility</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="intelligence" id="int">
+                    <label> Intelligence</label>
+                 </div>
+        </div>
+
+        <div class="role-filter box-filter">
+            <h2>Role</h2>
+                <div class="attribute">
+                   <input type="checkbox" name="carry" id="Carry">
+                   <label> Carry</label>
+                </div>
+                
+                <div class="attribute">
+                    <input type="checkbox" name="disabler" id="Disabler">
+                    <label> Disabler</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="durable" id="Durable">
+                    <label> Durable</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="escape" id="Escape">
+                    <label> Escape</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="initiator" id="Initiator">
+                    <label> Initiator</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="jungler" id="Jungler">
+                    <label> Jungler</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="nuker" id="Nuker">
+                    <label> Nuker</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="pusher" id="Pusher">
+                    <label> Pusher</label>
+                 </div>
+
+                 <div class="attribute">
+                    <input type="checkbox" name="support" id="Support">
+                    <label> Support</label>
+                 </div>
+        </div>
+    </section>
+
+    <section class="hero-list-container">
+       <ul class="hero-list">
+        
+       </ul>
+    </section>
+</body>
+</html>

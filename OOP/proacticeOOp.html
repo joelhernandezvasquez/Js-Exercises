@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function Human(firstName,lastName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName
+
+            
+        }
+
+        Human.prototype.sayName = function(){
+            console.log(`${this.firstName} ${this.lastName}`);
+        }
+
+
+        function employeer(sueldo)
+        {
+            this.sueldo = sueldo;
+        }
+
+
+        employeer.prototype = Object.create(Human.prototype);
+
+
+        class Human{
+            constructor(firstName,lastName)
+            {
+                this.firstName = firstName;
+            this.lastName = lastName  
+            }
+
+            sayName()
+            {
+                console.log(`${this.firstName} ${this.lastName}`);
+            }
+        };
+
+        
+
+        const joel = new Human("Joel","hernandez");
+
+    </script>
+</body>
+</html>

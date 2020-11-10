@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title> Gsap course</title>
+        <style>
+            #container{
+                background:black;
+                width: 500px;
+                height: 500px;
+                position:relative;
+                overflow: hidden;
+            }
+            .box1
+            {
+                background:red;
+                width: 100px;
+                height: 100px;
+                position:absolute;
+            }
+            .box2
+            {
+                background:blue;
+                width: 100px;
+                height: 100px;
+                position:absolute;
+            }
+            .box3
+            {
+                background:yellow;
+                width: 100px;
+                height: 100px;
+                position:absolute;
+            }
+            .box4
+            {
+                background:purple;
+                width: 100px;
+                height: 100px;
+                position:absolute;
+            }
+            .box5
+            {
+                background:green;
+                width: 100px;
+                height: 100px;
+                position:absolute;
+            }
+            .button1,.button2,.button3,.button4{
+                background:grey;
+                padding:20px;
+                width: 60px;
+                display:inline-block;
+            }
+            .button1:hover,.button2:hover,.button3:hover,.button4:hover{
+                background:yellow;
+               cursor: pointer;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script> -->
+    </head>
+    <body>
+        <div id="container">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+        </div>
+        <div class="button1">Run</div>
+        <div class="button2">Play</div>
+        <div class="button3">Pause</div>
+        <div class="button4">Reverse</div>
+        
+
+        <script>
+
+            const button1 = document.querySelector(".button1");
+            const button2 = document.querySelector(".button2");
+            const button3 = document.querySelector(".button3");
+            const button4 = document.querySelector(".button4");
+            let tween1;
+
+            button1.addEventListener("click",()=>{
+               /*  tween1 = gsap.fromTo('#box',{x:0,y:0,width:'100px',height:'100px',borderRadius:'0',opacity:'0'},
+                { x:200,y:200, width:'200px',height:'200px',borderRadius:'50%',opacity:'1',transformOrigin:'50% 50%',rotation:'+360',repeat:1,duration:3,yoyo:'true'
+                ,runBackwards:'true'}); */
+
+               /*  tween1 = gsap.fromTo(".box",{background:'red',x:0,y:0,width:'100px',height:'100px'},
+                { background:'yellow',x:400,y:0, duration:1,stagger:.1, ease:'bounce.out'}); */
+           
+               // using Timeline
+                let boxesT = gsap.timeline({repeat:-1});
+
+                 boxesT.to(".box1",{x:50,duration:2});
+                 boxesT.to(".box2",{x:100,duration:.5});
+                 boxesT.from(".box3",{x:400,y:400});
+                 boxesT.fromTo(".box4",{x:250,y:250},{x:0,y:400});
+                 boxesT.fromTo(".box5",{x:300,y:400},{x:0,y:0,scale:5});
+            })
+
+            button2.addEventListener("click",()=>{
+               tween1.play();
+            })
+
+            button3.addEventListener("click",()=>{
+                tween1.pause();
+            })
+
+            button4.addEventListener("click",()=>{
+              tween1.reverse();
+            })
+
+        </script>
+    </body>
+</html>

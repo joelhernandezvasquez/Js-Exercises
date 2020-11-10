@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+       /*  class Human{
+            constructor(firstName,lastName)
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            sayName()
+            {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        };
+
+        class Developer extends Human{
+          
+          code(thing)
+          {
+              return `${this.firstName} can coded ${thing} `;
+          }
+        };
+
+        class Designer extends Human{
+          
+            design(thing)
+          {
+              return `${this.firstName} can designed ${thing} `;
+          }
+
+        };
+ */
+        
+         /* CODE ABOVE DOES NOT SUPPORT TO CREATE A CLASS THAT SUPPORTS A THIRD CLASS THAT INHERENTS DEVELOPER AND DESIGNER
+          SO WE HAVE TO USE COMPOSITION USING MIXING GIVEN THE FACT JAVASCRIPT DOES NOT SUPPORT MULTIPLE INHERATANCE*/
+
+          class Human{
+             constructor(firstName,lastName)
+             {
+                 this.firstName = firstName;
+                 this.lastName = lastName;
+             }
+          };
+
+          class Developer extends Human{
+              sayName()
+              {
+                return `${this.firstName} ${this.lastName} and I am a Developer`;   
+              }
+          }
+          class Designer extends Human{}
+
+          // Now we create Mixins which are objects that contain properties you want to “mix” into another object.
+          const canSayName = {
+              sayName()
+              {
+                  return `${this.firstName} ${this.lastName}`;
+              }
+          };
+
+          const canCode = {
+               code(thing)
+               {
+                return `${this.firstName} can coded ${thing} `; 
+               }
+          };
+
+          const canDesign = {
+              design(thing)
+              {
+                return `${this.firstName} can designed ${thing} `;  
+              }
+          };
+
+
+          class DesignerWhoCanCode extends Human{}
+
+          // now we are assign the mixing 
+
+          Object.assign(Developer.prototype, canCode, canSayName)
+          Object.assign(Designer.prototype, canDesign, canSayName)
+          Object.assign(DesignerWhoCanCode.prototype,canSayName,canCode,canDesign);
+
+
+
+
+
+        const joel = new Developer("Joel","Hernandez");
+        console.log(joel.code("Javascript"));
+        console.log(joel.sayName())
+        const mayelin = new Designer("Mayelin","Romero");
+        console.log(mayelin.sayName());
+        console.log(mayelin.design("Website"));
+
+        const nelson = new DesignerWhoCanCode("Nelson","Abreu");
+
+       console.log(nelson.sayName());
+       console.log(nelson.code("PHP"));
+       console.log(nelson.design("A Wordpress Website"));
+
+        
+    </script>
+</body>
+</html>

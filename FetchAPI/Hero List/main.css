@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #010918;
+}
+
+header {
+  margin-top: 2rem;
+  color: white;
+}
+
+header * {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.filter-container {
+  position: fixed;
+  top: 9rem;
+  left: 2rem;
+  width: 250px;
+}
+
+.filter-container .box-filter {
+  background: #131f36;
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter-container .box-filter * {
+  margin: 5px 0;
+}
+
+.filter-container h2, .filter-container label {
+  color: white;
+}
+
+.filter-container h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.filter-container .attribute input {
+  cursor: pointer;
+}
+
+.filter-container .attribute label {
+  font-size: 1.1rem;
+}
+
+.hero-list-container {
+  position: relative;
+  width: 75%;
+  top: 1rem;
+  left: 20%;
+}
+
+.hero-list-container .hero-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 5px;
+}
+
+.hero-list-container .hero-list .hero img {
+  width: 80%;
+}
+/*# sourceMappingURL=main.css.map */

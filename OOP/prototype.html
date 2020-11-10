@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         function Book (title,author,year)
+        {
+             this.title = title;
+             this.author = author;
+             this.year = year;
+
+            
+        }
+
+        //get Summary prototype
+        Book.prototype.getSummary = function () {
+            return `${this.title} was written by ${this.author}
+                 in ${this.year}`
+        }
+
+    //getyears prototype
+        Book.prototype.getYears = function(){
+          const yearNow = new Date();
+          return `${this.title} is ${yearNow.getFullYear() - this.year} years old`;
+        }
+ // revise prototype
+        Book.prototype.revise = function(year){
+            this.year = year;
+            this.revised = true;
+        }
+
+        const book1 = new Book("bookOne","John Doe","2013");
+          console.log(book1);
+          console.log(book1.getSummary());
+          console.log(book1);
+          console.log(book1.getYears())
+          book1.revise("2016");
+          console.log(book1);
+          console.log(book1.getYears())
+    </script>
+</body>
+</html>

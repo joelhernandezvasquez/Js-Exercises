@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Car {
+            constructor()
+            {
+              this.fuel = 50;  
+            }
+        }
+
+        const carrito = new Car();
+          
+          carrito.fuel = 100;
+        console.log(carrito);
+        
+        
+        // CLOSURE prevents variables declared within outside from leaking out into the global scope.
+
+        // EXAMPLE
+
+        function outside()
+        {
+            const message = "Hello World";
+
+            function inside() // this has access to variables but do not exposed it outside of the scope so user cannot touch it
+            {
+                console.log( message);
+            }
+            
+            return inside();
+        }
+
+        outside();
+        console.log(message);
+
+    
+       
+
+
+    </script>
+    
+</body>
+</html>

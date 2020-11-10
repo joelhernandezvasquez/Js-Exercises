@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+       const userLogin = (email,password)=>{
+
+           return new Promise((resolve,reject)=>{
+                
+               setTimeout(()=>{
+                 
+                 if(password===1234)
+                 {
+                     resolve({userEmail:email});
+                 }
+
+                 else{
+                     reject("Invalid Password, does not match with our record");
+                 }
+               },2000)
+              
+           })
+
+       }
+
+       const  getUserCredentials = (email,value) => {
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+
+                    if(value)
+                      resolve (["get","post","put/patch"]);
+
+                      else
+                      reject("no crediantials");
+             },1000)
+            })
+       }
+
+        console.log("start");
+
+         /*  userLogin("jhernandez98",1234)
+         .then((data)=> console.log(data.userEmail))
+         .catch((err)=> console.log(err)) 
+
+         getUserCredentials("jhernandez",true)
+         .then((data)=> console.log(data))
+         .catch((err)=>{
+             console.log(err);
+         }) */
+
+         Promise.all([userLogin("jerhand",1234),getUserCredentials("hfdfh",true)])
+         .then((result)=>{ 
+             console.log(result[0].userEmail)
+             console.log(result[1])
+             })
+         .catch((err)=> console.log(err))
+
+         
+
+        
+
+
+
+        console.log("finish");
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+console.log("start");
+
+const loginIN = (username,password) =>{
+   
+   return new Promise((resolve,reject) =>
+   {
+    console.log("fetching the data");
+        setTimeout(()=>{
+            if(password===1234)
+            {
+                resolve({user:username});
+            }
+            else{
+                reject("Error the password is incorrect");
+            }
+      
+   },3000)
+   })   
+}
+
+const getCredits = (username) => {
+   
+   return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve({credits:27});
+   },2000)
+   }) 
+}
+
+const getMajor = (username) =>
+{
+   return new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+     resolve({major:"computer science"});
+   },2000)
+   })  
+}
+
+/* loginIN("Joelh",1234)
+.then((student)=> getCredits(student.user))
+.then((credit)=> getMajor("joelh"))
+.then((major)=> console.log(major.major))
+.catch((error) => console.log(error));  */
+
+/* loginIN("joelh",1234)
+.then((student) => {
+     console.log(student.user)
+     
+     getCredits(student.user)
+     .then((credit)=> {
+         console.log(credit.credits);
+
+         getMajor(student.user)
+         .then((major)=>{
+             console.log(major.major)
+         })
+     })    
+})
+.catch((error) => console.log(error));
+ */
+
+ Promise.all([loginIN("joelh",1234),getCredits("joelh"),getMajor("joelh")])
+ .then((result)=>{
+   result.forEach((data)=>{
+       console.log(data);
+   })
+ })
+ .catch((error)=> console.log(error))
+
+
+console.log("finish");
+
+    </script>
+  
+</body>
+</html>

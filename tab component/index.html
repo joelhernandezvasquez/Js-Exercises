@@ -1,0 +1,64 @@
+<html>
+
+<head>
+ <link href="index.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+ <script src="main.js"></script>
+</head>
+
+<body>
+
+    <div class="tabby">
+        <div class="tabs">
+            <button class="btn selected" data-anime="digimon" data-color="digimon"> Digimon</button>
+            <button  class="btn" data-anime="pokemon" data-color="pokemon"> Pokemon</button>
+            <button class="btn" data-anime="tamagotchi" data-color="tamagotchi"> Tamagotchi</button>
+        </div>
+
+        <div class="tab-content">
+            <section class="tab-info is-selected" data-theme="digimon" data-color="digimon"> 
+               <img src="img/digimon.png">
+                <h1> Digimon</h1>
+               <p> Digimon, short for "Digital Monsters", is a Japanese media franchise
+                encompassing virtual pet toys, anime, manga, video games, films and
+                a trading card game. The franchise focuses on Digimon creatures,
+                which are monsters living in a "Digital World", a parallel universe
+                that originated from Earth's various communication networks.</p>
+         
+               <p> <a href="https://en.wikipedia.org/wiki/Digimon">More about Digimion &rarr;</a></p>
+                
+            </section>
+            
+            <section class="tab-info" data-theme="pokemon" data-color="pokemon">
+                <img src="img/pokemon.png">
+                <h1> Pokémon</h1>
+               <p> Pokémon also known as Pocket Monsters in Japan, is a media franchise
+                managed by The Pokémon Company, a Japanese consortium between
+                Nintendo, Game Freak, and Creatures. The franchise copyright is
+                shared by all three companies, but Nintendo is the sole owner of the
+                trademark.</p>
+         
+               <p> <a href="https://en.wikipedia.org/wiki/Pokémon">More about Pokémon &rarr;</a></p>  
+            </section>
+            
+            <section class="tab-info " data-theme="tamagotchi" data-color="tamagotchi">
+                <img src="img/tamagotchi.png">
+                <h1> Tamagotchi</h1>
+               <p> The Tamagotchi is a handheld digital pet, created in Japan by
+                Akihiro Yokoi of Bandai. It was released by Bandai on November 23,
+                1996 in Japan and May 1, 1997 in the rest of the world, quickly
+                becoming one of the biggest toy fads of the 1990s and early 2000s.
+                As of 2010, over 76 million Tamagotchis had been sold worldwide.</p>
+         
+               <p> <a href="https://en.wikipedia.org/wiki/Tamagotchi">More about Tamagotchi &rarr;</a></p>  
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const buttonTabs = document.querySelector(".tabs");
+
+        buttonTabs.addEventListener("click",openTab);
+    </script>
+</body>
+</html>

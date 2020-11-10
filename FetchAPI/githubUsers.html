@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn1">Load my Repositories</button>
+    <button id="btn2">Load Repositories</button>
+
+    <script>
+
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+
+        const loadJoelRepo = () =>
+        {
+            fetch("https://api.github.com/users/joelhernandezvasquez/repos")
+            .then((response)=> response.json())
+            .then((data)=>{
+                const list = document.createElement("ol");
+                let output = "";
+
+                data.forEach(element => {
+                    output+=`<li>
+                              <a href="${element.html_url}"> ${element.name}(# ${element.stargazers_count}) </a>
+                             </li>`
+                });
+
+                list.innerHTML = output;
+                document.body.appendChild(list);
+            })
+        }
+
+        const loadGithubRepo = () =>{
+            fetch("https://api.github.com/users/zellwk/repos")
+            .then((response)=> response.json())
+            .then((data)=>{
+                let list = document.createElement("ol");
+               
+                
+                list.innerHTML=  data.map(element => {
+                   return `<li>
+                              <a href="${element.html_url}"> ${element.name}(# ${element['stargazers_count']}) </a>
+                             </li>`
+                })
+               console.log(list);
+               
+                
+                document.body.appendChild(list);
+            })
+        }
+
+
+
+        btn1.addEventListener("click",loadJoelRepo);
+        btn2.addEventListener("click",loadGithubRepo);
+
+
+    </script>
+</body>
+</html>

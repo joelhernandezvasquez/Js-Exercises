@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       //   ES6
+        class Car{
+         #fuel = 50;
+
+         get fuel(){
+           return this.#fuel;
+         }
+         set fuel(amount){
+            this.#fuel += amount;
+
+            if(this.#fuel > 100)
+            {
+                console.log("Error tank cannot take higher than 100 gallons pouring away the exceed amount");
+                this.#fuel = 100;
+            }
+         }
+        };
+
+        const carrito = new Car();
+        carrito.fuel = 51;
+        console.log(carrito.fuel);
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    function Human(firstName,lastName)
+    {
+       this.firstName = firstName;
+       this.lastName = lastName;
+
+       this.sayName = function()
+       {
+           return `${firstName} ${lastName}`
+       }
+    }
+
+    Human.prototype.sayName2 = function()
+    {
+        return `${this.firstName}  ${this.lastName}`;
+    }
+
+    function Marciano(firstName,lastName,color)
+    {
+        Human.call(this,firstName,lastName)
+        this.color = color;
+    }
+
+    Marciano.prototype = Object.create(Human.prototype);
+
+    class Vehicle{
+
+        constructor(type,brand,color)
+        {
+            this.type = type;
+            this.brand = brand;
+            this.color = color;
+        }
+
+        printVehicle()
+        {
+            return ` this is a ${this.type} and it is a ${this.brand} of color ${this.color}`; 
+        }
+    };
+
+    class Truck extends Vehicle{
+        
+    };
+
+
+
+    const person = new  Human("Joel","Hernandez");
+    console.log(person.sayName());
+    console.log(person.sayName2());
+    const car = new Vehicle("Car","Toyota","Red");
+    console.log(car.printVehicle());
+    const marcianito = new Marciano("Joel","Hernandez","Verde");
+    console.log(marcianito.sayName());
+
+
+
+
+    </script>
+</body>
+</html>

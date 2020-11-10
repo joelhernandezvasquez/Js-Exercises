@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<link href="style.css" type="text/css" rel="stylesheet">
+<script src="main.js"></script>
+</head>
+
+<body>
+   
+    <div class="site-container">
+       <h1> Click the button to open the sidebar!</h1>
+       <button id="btn"> Menu</button>
+    </div>
+
+    <div class="menu-container">
+        <ul class="list-item">
+           <li> <a href="#"> Home </a></li>
+           <li> <a href="#"> Work </a></li>
+           <li> <a href="#"> About </a></li>
+           <li> <a href="#"> Contact </a></li>
+        </ul>
+    </div>
+
+    <script>
+        const siteContainer = document.querySelector(".site-container");
+        const menuContainer = document.querySelector(".menu-container");
+        const menubtn = document.querySelector("#btn");
+
+        menubtn.addEventListener("click",openMenu);
+
+    </script>
+</body>
+</html>
