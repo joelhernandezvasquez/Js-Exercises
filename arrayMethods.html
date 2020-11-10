@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <script>
+
+let people = [
+  'Benjamin Franklin',
+  'Thomas Edison',
+  'Franklin Roosevelt',
+  'Mahatma Gandhi',
+  'Napoleon Bonaparte',
+  'Abraham Lincoln'
+];
+
+// 1 - What is the index of Mahatma Gandhi in this list of people? Use indexOf.
+
+ console.log(people.indexOf("Mahatma Gandhi"));
+
+/*  // 2 - Add Winston Churchill and Albert Einstein to the start of the list. 
+With unshift
+With splice */
+
+   //people.unshift("Winston Churchil","Albert Einsten");
+   people.splice(0,0,"Winston Churchil","Albert Einsten");
+   console.log(people);
+
+ /* 3 - Add Charles Darwin and Walt Disney to the end of the list. 
+With push
+With splice */
+
+//people.push("Charles Darwin","Walt Disney");
+people.splice(people.length,0,"Charles Darwin","Walt Disney");
+console.log(people);
+
+/* 4 - Add Pablo Picasso and Ludwig van Beethoven 
+after Mahatma Gandhi. Use splice. */
+
+let GandhiPosition = people.indexOf("Mahatma Gandhi");
+console.log(GandhiPosition);
+
+people.splice(GandhiPosition + 1,0,"Pablo Picaso","Ludwig van Beethoven");
+console.log(people);
+
+/* 5 - Remove Benjamin Franklin and Thomas Edison 
+With shift
+With splice */
+const benjaminPosition = people.indexOf("Benjamin Franklin");
+people.splice(benjaminPosition,2)
+console.log(people);
+
+/* 6 - Remove Napoleon Bonaparte and Abraham Lincoln 
+With pop
+With splice */
+const napoleonPosition = people.indexOf("Napoleon Bonaparte");
+people.splice(napoleonPosition,2)
+console.log(people);
+
+//7 - Remove Mahatma Gandhi with splice
+
+GandhiPosition = people.indexOf("Mahatma Gandhi");
+people.splice(GandhiPosition,1);
+console.log(people);
+
+
+
+
+
+    </script>
+</body>
+</html>

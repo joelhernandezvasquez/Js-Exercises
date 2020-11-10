@@ -1,0 +1,59 @@
+<html>
+
+<head>
+
+    <style>
+
+        .box
+        {
+            width: 200px;
+            height:200px;
+            background:blue;
+            animation:move-out 4s ease-out;
+        }
+
+        @keyframes move-out
+        {
+            0%
+            {
+                margin-left:0px;
+            }
+            25%
+            {
+                margin-left:400px;
+            }
+
+             50%
+            {
+                margin-top:200px;
+            }
+
+             75%
+            {
+                margin-left:0px;
+            }
+
+            100%
+            {
+                margin-top:0px;
+            }  
+        }
+    </style>
+</head>
+
+    <body>
+
+        <div class="box">
+
+        </div>
+
+        <script>
+
+            document.addEventListener("animationend",e =>{
+                console.log(e.target);
+                console.log(e.animationName);
+            })
+        </script>
+    </body>
+
+</html>

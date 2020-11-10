@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <!--  <ol>
+        <li>Banana</li>
+        <li>Pineapple</li>
+        <li>Orange</li>
+      </ol> -->
+
+      <!-- <div class="characters">
+        <ul class="hobbits">
+          <li>Frodo Baggins</li>
+          <li>Samwise "Sam" Gamgee</li>
+          <li>Meriadoc "Merry" Brandybuck</li>
+          <li>Peregrin "Pippin" Took</li>
+        </ul>
+        <ul class="elves">
+          <li>Glorfindel</li>
+          <li>Elrond</li>
+          <li>Arwen Evenstar</li>
+        </ul>
+        <ul class="humans">
+          <li>Gandalf</li>
+          <li>Saruman</li>
+          <li>Boromir</li>
+          <li>Faramir</li>
+        </ul>
+      </div> -->
+
+      <ol class="humans">
+        <li>Gandalf</li>
+        <li>Saruman</li>
+        <li>Aragorn</li>
+        <li>Boromir</li>
+        <li>Faramir</li>
+      </ol>
+
+      
+
+      <script>
+        /* const listItemParent = document.querySelector("ol");
+        const listItem = document.createElement("li");
+        const referenceElement = listItemParent.firstElementChild;
+       
+
+         listItem.textContent = "Strawberry";
+        //listItemParent.appendChild(listItem); 
+
+        listItemParent.insertBefore(listItem,referenceElement); */
+        
+        const devs = ['Addy Osmani', 'Vitaly Friedman', 'Chris Coyier']
+
+      /*   const hobbitParentElement = document.querySelector(".hobbits");
+       const hobbitItem = document.createElement("li");
+       hobbitItem.textContent = "Bilbo Baggins";
+       hobbitParentElement.appendChild(hobbitItem);
+
+        const elvesParentElement = document.querySelector(".elves");
+        const glorfindelItem = elvesParentElement.firstElementChild;
+        const legolasItem = document.createElement("li");
+        legolasItem.textContent = "Legolas";
+
+        elvesParentElement.insertBefore(legolasItem,glorfindelItem);
+
+        const humansParentElement = document.querySelector(".humans");
+        const boromirItem = humansParentElement.children[2];
+        const aragonItem = document.createElement("li");
+        aragonItem.textContent = "Aragon";
+
+        humansParentElement.insertBefore(aragonItem,boromirItem);
+
+        const parent = document.querySelector(".characters");
+
+        const devsList = document.createElement("ol");
+        const devsItem = devs.map(dev => `<li> ${dev} </li>`).join(' ');
+       
+
+        parent.appendChild(devsList);
+        devsList.innerHTML = devsItem;
+ */
+        const parentElement = document.querySelector(".humans");
+        const faramir = parentElement.lastElementChild;
+        const aragon = parentElement.removeChild(parentElement.children[2]);
+       parentElement.appendChild(aragon);
+
+
+
+
+
+</script>
+    
+</body>
+</html>

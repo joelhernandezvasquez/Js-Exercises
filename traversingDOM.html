@@ -1,0 +1,90 @@
+<html>
+   
+<head>
+    <body>
+        <div class="characters">
+            <ul class="hobbits">
+              <li>Frodo Baggins</li>
+              <li>Samwise "Sam" Gamgee</li>
+              <li>Meriadoc "Merry" Brandybuck</li>
+              <li>Peregrin "Pippin" Took</li>
+              <li>Bilbo Baggins</li>
+            </ul>
+            <ul class="humans">
+              <li>Gandalf</li>
+              <li>Saruman</li>
+              <li>Aragorn</li>
+              <li>Boromir</li>
+              <li>Faramir</li>
+            </ul>
+            <ul class="elves">
+              <li>Legolas</li>
+              <li>Glorfindel</li>
+              <li>Elrond</li>
+              <li>Arwen Evenstar</li>
+            </ul>
+            <ul class="enemies">
+              <li>Sauron</li>
+              <li>Nazgûl</li>
+            </ul>
+          </div>
+        
+        <script>
+  
+  // 1 - Select .characters with document.querySelector
+        const characters = document.querySelector(".characters");
+        console.log(characters);
+
+    //2 -Select .humans from .characters
+
+     // A 
+         const humansA = characters.querySelector(".humans");
+         console.log(humansA);
+    // B
+      const humansB = characters.children[1];
+      console.log(humansA);
+
+    //3 - Select all humans with querySelectorAll, starting from .humans
+    const humansList = Array.from(humansA.querySelectorAll("li"));
+    console.log(humansList);
+
+    // 4 Select all hobbits with children
+    const hobbit = document.querySelector(".hobbits");
+    const hobbitList = hobbit.children;
+    console.log(hobbitList);
+
+    //5 Select the Merry (the hobbit)
+    const merry = hobbit.children[2];
+    console.log(merry);
+   
+   // 6 Select .elves from Merry
+      const elves = merry.closest(".characters").children[2];
+      console.log(elves);
+
+      const elvesAlternative = merry.parentElement.nextElementSibling.nextElementSibling;
+      console.log(elvesAlternative);
+
+  // 7 Select Glorfindel from .elves
+      const glorfindel = elves.children[1];
+      console.log(glorfindel);
+
+  // 8 Select Elrond from Glorfindel
+      const elrond = glorfindel.nextElementSibling;
+      console.log(elrond);
+
+
+// 9 Select Legolas from Glorfindel
+      const legolas = glorfindel.previousElementSibling;
+      console.log(legolas);
+
+// 10 Select the .characters div from Nazgûl
+     const nazgul = characters.children[3].lastElementChild;
+     const mainParent = nazgul.closest(".characters");
+     console.log(mainParent);
+     
+
+
+        </script>
+    </body>
+</head>
+</html>

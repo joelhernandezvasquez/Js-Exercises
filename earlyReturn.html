@@ -1,0 +1,27 @@
+<html>
+
+ <head>
+
+ </head>
+
+ <body>
+
+    <script>
+   
+   const getGift = (score) =>
+   {
+       if(score===100) { return 'Xbox'}
+       if(score >=76 && score < 100) return('New Phone')
+       if(score >= 51 & score < 76) return ("get a meal")
+       if(score < 51) return("get nothing")
+       return null;
+   }
+
+   const gift = getGift(70);
+   //console.log(gift);
+   console.log(`My son ${gift} yesterday due his scored in Math test`);
+    </script>
+
+ </body>
+
+ </html>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+
+    <script>
+ <ul id="star-wars-characters">
+    <li class="character luke" data-type="hero">Luke Skywalker</li>
+    <li class="character yoda" data-type="master">Yoda</li>
+    <li class="character badboy" data-type="villain">Darth Vader</li>
+ </ul>
+
+//EXERCISES
+
+//1. Get the #star-wars-characters list with id and tag selectors
+
+    const starWarsList = document.querySelector("#star-wars-characters");
+    const characters = document.querySelector("ul");
+
+// 2. From the #star-wars-characters list, get the following: 
+    //A. Luke Skywalker with class, tag and attribute selectors
+    const lukeSkywalker = document.querySelector(".luke");
+    const lukeTag = document.querySelector("ul li");
+    const lukeAttribute = document.querySelector("[data-type=hero]");
+
+    // B Yoda with class and attribute selectors
+     const yoda = document.querySelector(".yoda");
+     const yodaTag = document.querySelector("[data-type=master]");
+    
+    // C Darth Vader with class and attribute selectors
+    const vader = document.querySelector(".badboy");
+    const vaderAttribute = document.querySelector("[data-type = villain]")
+    </script>
+</body>
+</html>

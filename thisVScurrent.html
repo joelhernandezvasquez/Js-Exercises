@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+    <button> click me </button>
+    
+    <script>
+      
+    function changeBackground()
+    {
+        this.style.background = "blue";
+    }
+
+    const changeBackground = (e) =>
+    {
+      e.target.style.background = "blue";
+    }
+    
+   const button = document.querySelector("button");
+
+    button.addEventListener("click",changeBackground);
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<h1 data-name="title1"> Hello</h1>
+<h1 data-name="title2"> Hello</h1>
+<h1 data-name="title3"> Hello</h1>
+<h1 data-name="title4"> Hello</h1>
+   
+   <script>
+
+   const mainTitle = document.querySelector("[data-name=title1]");
+   mainTitle.setAttribute("data-name","main title");
+   console.log(mainTitle);
+
+   const title2 = document.querySelector("[data-name=title2]");
+   const attr = title2.getAttribute("data-name");
+   console.log(attr);
+
+
+   const title3 = document.querySelector("[data-name=title3]");
+   console.log(title3.dataset);
+   title3.dataset.name = "third Title";
+   console.log(title3.dataset);
+
+   console.log(title3.dataset.name);
+
+    </script>
+</body>
+
+</html>

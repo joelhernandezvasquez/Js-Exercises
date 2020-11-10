@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+    <style>
+
+        button
+        {
+            background-color: #1ce;
+            padding:1rem;
+            font-size: 1.2rem;
+            
+        }
+
+        button.is-clicked
+        {
+            background-color: #bada55;
+        }
+
+        body.button-is-clicked
+        {
+            background-color:#99aefa;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+   <button> Click me</button>
+   
+   <script>
+
+  const button = document.querySelector("button");
+  const body = document.body;
+
+  button.addEventListener("click",function(){
+      body.classList.toggle("button-is-clicked");
+      button.classList.toggle("is-clicked");
+  })
+
+ /*  button.addEventListener("click",function(){
+     
+     if(body.classList.contains("button-is-clicked"))
+     {
+         body.classList.remove("button-is-clicked");
+         button.classList.remove("is-clicked");
+     }
+     else
+     {
+        body.classList.add("button-is-clicked");
+         button.classList.add("is-clicked");   
+     }
+  }) */
+
+  
+
+    </script>
+</body>
+</html>

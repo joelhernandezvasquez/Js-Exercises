@@ -1,0 +1,45 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div id="star-wars">
+            <div class="character" data-type="good-guy">Luke Skywalker</div>
+            <div class="character" data-type="good-guy">Yoda</div>
+            <div class="character" data-type="villain">Darth Vader</div>
+          </div>
+        
+        <script>
+
+ // 1 - Select all good guys with attributes
+    
+    const guys = document.querySelectorAll("[data-type = good-guy]");
+
+    console.log(guys);
+
+    //2 - Give good guys a yay class
+    
+    guys.forEach(element =>{
+        element.classList.add("yay");
+    });
+
+    //3 Select all villains with attributes
+
+    const villans = document.querySelectorAll("[data-type=villan]");
+
+    // 4 Give villains a nay class
+    villans.forEach(element =>{
+        villans.classList.add("nay");
+    })
+
+//5 Select all characters through the character class
+ const characters = document.querySelectorAll(".character");
+
+ characters.forEach(element =>{
+     element.classList.add("star-wars");
+     
+ })
+        </script>
+    </body>
+</html>

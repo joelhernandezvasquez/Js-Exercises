@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+
+    <script>
+   
+    const surfacePro = {
+        operatingSystem : "Windows 10 Pro",
+        storage : '256GB',
+        playMusic:function(){
+            console.log("Amor Compartido Mana");
+        }
+       
+    };
+
+    console.log(surfacePro.storage);
+
+    surfacePro.storage = '512GB';
+
+    console.log(surfacePro.storage);
+
+    delete surfacePro.storage;
+    
+    console.log(surfacePro);
+    surfacePro.playMusic();
+
+    //EXERCISE 
+
+   //Make an empty object.
+   const person = {
+       name:'Adrian',
+       eat:function(){
+           console.log('Mi polly says ma ma..');
+       }
+   };
+  
+ /*  Make a property for your object that can be accessed with a 
+  dot notation. Get the value of this property. */
+  console.log(person.name);
+  /* Make a property for your object that can only be accessed 
+  with the bracket notation. Get the value of this property. */
+  console.log(person['name']);
+
+ // Set the value of a property with the dot notation.
+ person.name = 'Adrian Hernandez';
+
+ console.log(person.name);
+
+ person.eat();
+
+console.log(window);
+
+
+
+  
+
+    </script>
+</body>
+</html>
