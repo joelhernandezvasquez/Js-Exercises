@@ -1,0 +1,116 @@
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 1fr 0.3fr;
+      grid-template-columns: 0.3fr 1fr 0.3fr;
+  -ms-grid-rows: 500px 150px;
+      grid-template-rows: 500px 150px;
+      grid-template-areas: "left-btn carrousel-content-container right-btn" ". dots-container .";
+}
+
+.wrapper .left-btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left-btn;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.wrapper .left-btn i {
+  cursor: pointer;
+}
+
+.wrapper .carrousel-content-container {
+  padding-top: 1rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: carrousel-content-container;
+  overflow: hidden;
+}
+
+.wrapper .carrousel-content-container .carrousel-content {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.wrapper .carrousel-content-container .carrousel-content .slide {
+  position: absolute;
+  list-style-type: none;
+  width: inherit;
+  height: inherit;
+}
+
+.wrapper .right-btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: right-btn;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.wrapper .right-btn i {
+  cursor: pointer;
+}
+
+.wrapper .dots-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: dots-container;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .dots-container .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.wrapper .dots-container .selected-dot {
+  background: black;
+}
+
+.img-size {
+  width: 100%;
+}
+
+/* .selected-dot
+{
+    border:1px solid black;
+} */
+/*# sourceMappingURL=style.css.map */

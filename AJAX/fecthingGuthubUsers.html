@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github users</title>
+
+
+    <style>
+        
+        .users{
+            
+            margin: auto;
+            width:1100px;
+
+        }
+        img{
+            width:80px;
+
+        }
+        .user{
+            background:rgba(192, 192, 192, 0.2);
+            width:100%;
+            margin:1rem 0;
+            padding:1rem;
+            display: flex;
+            align-items: center;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    
+
+    <button id="btn1"> Load Users</button>
+
+    <div class="users">
+
+    </div>
+
+    <script>
+
+        const btn = document.querySelector("#btn1");
+        const userContainer = document.querySelector(".users");
+
+        function loadUsers ()
+        {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET","https://api.github.com/users",true);
+
+            xhr.onload = function() {
+                if(this.status==200)
+                {
+                    const response = JSON.parse(this.response);
+                   
+                        const data = response.map(repo =>{
+                        return{
+                            image:repo.avatar_url,
+                            id:repo.id,
+                            login:repo.login
+                        }  
+                    })
+
+                   
+                   
+                    for(repo in data)
+                    {
+                     
+                      const div = document.createElement("div");
+                     
+
+                      div.innerHTML = data.map(repo =>{
+                          return `<div class="user">
+                                <img src="${repo.image}">
+                                <span> ID:${repo.id}</span>
+                                <span> Login:${repo.login} </span>
+                                </div>`
+                      }).join('');
+                      console.log("hello");
+
+                      userContainer.appendChild(div);
+                    }
+                 }
+            }
+            xhr.send();
+        }
+
+        btn.addEventListener("click",loadUsers);
+
+        
+
+    </script>
+</body>
+</html>

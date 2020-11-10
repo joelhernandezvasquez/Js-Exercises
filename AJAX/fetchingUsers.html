@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1"> Get User</button>
+    <button id="button2"> Get Users</button>
+ <br> <br>
+
+ <h1> User </h1>
+ <div id="user"></div>
+
+ <h1> Users </h1>
+ <div id="Users"></div>
+
+ <script>
+  const btn1 = document.querySelector("#button1");
+  const btn2 = document.querySelector("#button2");
+
+  btn1.addEventListener("click",loadUser());
+
+  function loadUser()
+  {
+      let xhr = new XMLHttpRequest();
+
+      xhr.open("GET","https://api.github.com/users/joelhernandezvasquez/repos",true);
+
+      xhr.onload=function(){
+          if(this.status==200)
+          {
+             const response = JSON.parse(this.response);
+           
+            // creating an array
+            const data = response.map(repo =>{
+
+                return{
+                    name:repo.name,
+                    url:repo['html_url'],
+                    stars:repo['stargazers_count']
+                }
+            })
+
+
+            const list = document.createElement("ol");
+
+            list.innerHTML = data.map(repo =>{
+                return `<li>
+                <a href="#${repo.url}"> ${repo.name} (# of stars ${repo.stars})</a></li>`
+            }).join('');
+
+            document.body.appendChild(list);
+             
+          }
+      }
+      xhr.send();
+  }
+ </script>
+</body>
+</html>

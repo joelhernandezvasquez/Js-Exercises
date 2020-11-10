@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+       function download(url,callback)
+       {
+          setTimeout(() => {
+             console.log(`Downloading ${url}`);
+
+             callback(url);
+          }, 2000);
+       }
+
+       function process(picture)
+       {
+         console.log(`Processing ${picture}`);
+       }
+
+
+       
+       
+       
+       
+        let url ="https://www.javascripttutorial.net/foo.jg";
+        
+        download(url,(server) =>{ // anonimous function
+           console.log(server);
+        });
+
+        download(url,process);
+        
+
+
+    </script>
+</body>
+</html>

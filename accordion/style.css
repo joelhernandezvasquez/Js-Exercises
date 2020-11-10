@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+}
+
+.open.container-content
+{
+    height:250px;
+   
+}
+
+.accordion-container
+{
+    width: 40%;
+    margin:4rem auto 0 auto;
+    background:sandybrown;
+    position: relative; 
+    padding:10px; 
+}
+
+.container
+{
+    width:95%;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 10px;
+    
+}
+.container-header
+{
+    display:flex;
+    justify-content: space-between;
+    padding:1rem;
+    cursor: pointer;
+  
+}
+.container-content
+{
+    height:0;
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    grid-template-rows:250px;
+    grid-template-areas:
+    "content-icon content-info";
+    transition:height 0.3s ease-in-out;
+    overflow: hidden;
+}
+.content-icon 
+{
+    grid-area:content-icon;
+    
+}
+.content-info p
+{
+    font-size: 1.4rem;
+    padding:1.2rem;
+    line-height: 1.5;
+}
+.content-icon img
+{
+  width: 200px;
+  margin-left: 10px;
+}
+.content-info
+{
+    grid-area:content-info;
+   
+}
+
+.title
+{
+    margin-top:5px;
+}
+.icon
+{
+    width:40px;   
+}
+
+.is-visible
+{
+    display: none;
+}
+
+/* /* .plus
+{
+ display:block;
+} */
+.minus
+{
+ display:none;
+} 
+
+
+#cheese
+{
+    background:yellow;
+}
+#lettuce
+{
+    background:green;
+}
+#tomato
+{
+    background:rgba(247, 91, 91, 0.993);
+}
+#beef
+{
+    background:red;
+}

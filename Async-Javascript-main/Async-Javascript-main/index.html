@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+     console.log("start")
+     
+     const getUser = (email,password,callback) =>
+     {
+        setTimeout(()=>{
+            console.log("Now we have the data");
+            callback({userEmail:email});
+
+        },2000);
+     }
+
+     const getLevelOfUser = (email,callback) =>
+     {
+          setTimeout(() => {
+             console.log("Now we getting level of user");
+             callback({level:"admin"})
+
+         }, 2000);
+     }
+
+     const getVideos = ((level,callback) =>
+     {
+         setTimeout(()=>{
+             console.log("Now we getting the Videos");  
+             callback(["video1","video2","video3"]);
+         },1000)
+     })
+
+     const user = getUser("jhernandez",1234,(data) =>{
+        console.log(data.userEmail);
+          getLevelOfUser(data.userEmail,(level)=>{
+              console.log(level.level);
+                 getVideos(level.level,(video)=>{
+                  console.log(video);
+              })
+          })
+     }) 
+
+
+
+
+      console.log("finish")
+
+    </script>
+</body>
+</html>

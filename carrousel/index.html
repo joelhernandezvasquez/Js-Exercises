@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+       <link href="style.css" rel="stylesheet">
+       <script src="main.js"></script>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+           
+            <div class="left-btn">
+                <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true" ></i>
+               
+            </div>
+
+            <div class="carrousel-content-container" >
+               <ul class="carrousel-content">
+                  <li class="slide is-selected" id="first-slide"> 
+                      <a href="#">
+                       <img src="img/image1.jpg" class="img-size" >  
+                    </a>
+                 </li>
+
+                  <li class="slide" id="second-slide"> 
+                      <a href="#">
+                       <img src="img/image2.jpg" class="img-size" >  
+                     </a>
+                  </li>
+
+                  <li class="slide" id="third-slide"> 
+                      
+                    <a href="#"> 
+                        <img src="img/image3.jpg" class="img-size">
+                    </a>
+                </li>
+
+               </ul>
+            </div>
+
+            <div class="right-btn">
+                <i class="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
+            </div>
+
+            <div class="dots-container">
+              <button class="dot selected-dot" data-dot="1"> </button>
+              <button class="dot" data-dot="2"> </button>
+              <button class="dot" data-dot="3"> </button>
+            </div>
+        </div>
+
+        <script>
+          const trackContainer = document.querySelector(".carrousel-content");
+          const slides = Array.from(document.querySelectorAll(".slide"));
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          const nextBtn = document.querySelector(".right-btn i");
+          const previousBtn = document.querySelector(".left-btn i");
+          const dotsContainer = document.querySelector(".dots-container");
+          
+          previousBtn.style.display = "none";
+
+          slides.forEach((slide,index)=>
+          {
+              
+              slide.style.left = slideWidth * index + "px" ;
+              
+          });
+
+          nextBtn.addEventListener("click",moveNextSlide);
+          previousBtn.addEventListener("click",movePreviousSlide);
+          dotsContainer.addEventListener("click",changeSlideByDot);
+          
+
+
+          
+          
+        </script>
+    </body>
+</html>

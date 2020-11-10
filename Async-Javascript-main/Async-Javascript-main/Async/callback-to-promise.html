@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+       function download(url)
+       {
+           return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+             console.log(`Downloading ${url}`);
+
+             resolve({url:url});
+
+             reject("error");
+          }, 2000);
+           })
+          
+       }
+
+       function process(picture)
+       {
+          console.log(`Processing ${picture}`);
+       }
+
+      async function ShowDownload(url)
+      {
+        const downloadProcess = await download(url) ;
+        console.log(downloadProcess);
+        process(downloadProcess);
+      }
+
+
+        let url ="https://www.javascripttutorial.net/foo.jg";
+
+       /*  download(url)
+        .then((data)=> {
+            console.log(data);
+            process(data.url);
+        }) */
+        
+      /*   download(url,(server) =>{ // anonimous function
+           console.log(server);
+        });
+
+        download(url,process); */
+
+        ShowDownload(url);
+        
+
+
+    </script>
+</body>
+</html>

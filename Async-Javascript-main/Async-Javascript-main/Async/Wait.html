@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getUser = (email,password,value) =>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                   if(value)
+                   {
+                       resolve({ userEmail: email })
+                   }
+                   else
+                   {
+                       reject("User not found");
+                   }
+                },3000)
+            })
+        }
+
+
+        const getLevelOfuser = () => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        if (true) {
+                            resolve({ level: "admin"})
+                        }
+                        else {
+                            reject("Not access");
+                        }
+                    }, 2000)
+                })
+            }
+
+             const getVideos = (() => {
+                  return new Promise((resolve,reject)=>{
+
+                      if(true)
+                      {
+                          resolve(["video1", "video2", "video3"])
+                      }
+                      else
+                      {
+                          resolve("no videos found");
+                      }
+                  })
+                })
+
+
+                async function displayUserInfo()
+                {
+                   const user = await getUser("jhernandez98@outlook.es",1234,true);
+                   const typeUser = await getLevelOfuser();
+                   const videos = await getVideos();
+
+                   console.log(user.userEmail);
+                   console.log(typeUser.level)
+                   console.log(videos);
+                }
+
+        console.log("start");
+
+         displayUserInfo();
+
+
+        
+
+
+        console.log("finish");
+    </script>
+</body>
+</html>

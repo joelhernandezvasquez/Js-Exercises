@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Fetch</button>
+    <script>
+
+        const btn = document.querySelector("button");
+        btn.addEventListener("click",loadRepository);
+
+
+        function loadRepository()
+        {
+           const xhr = new XMLHttpRequest();
+            xhr.open("GET","https://api.github.com/users/zellwk/repos",true);
+            xhr.onload = function(){
+                if(this.status==200)
+                {
+                    const response = JSON.parse(this.response);
+                    const data = response.map(repo=>{
+                        return{
+                            name:repo.name,
+                            url:repo['html_url'],
+                            stars:repo['stargazers_count']
+
+                        }
+                    }).filter(repo => repo.stars > 50);
+                    const list = document.createElement("ol");
+
+                    list.innerHTML = data.map(repo=>{
+                        return `<li> 
+                              <a href="${repo.url}"> ${repo.name}(${repo.stars} of starts)</a> 
+                              </li>`
+                    }).join('');
+
+                    document.body.appendChild(list);
+
+                }
+            }
+
+            xhr.send();
+                
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

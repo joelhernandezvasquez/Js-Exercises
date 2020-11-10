@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        console.log("start");
+
+         
+         function userLogin(email,password,callback)
+         {
+             setTimeout(()=>{
+                 callback( {userEmail:email});
+             },3000)
+         }
+
+         function getUserCredentials(email,callback)
+         {
+             setTimeout(()=>{
+                callback (["get","post","put/patch"]);
+             },1000)
+             
+         }
+
+         function getLevelUser (email,callback)
+         {
+             setTimeout(() => {
+                 callback("admin");
+             }, 1200);
+         }
+
+         const user = userLogin("jhernandez98@outllook.es",1234,user =>{
+             console.log(user.userEmail);
+
+             getUserCredentials(user.userEmail, credentials =>{
+                 console.log(credentials);
+
+                getLevelUser(user.userEmail,levelUser =>{
+                   console.log(levelUser); 
+                })
+             });
+         });
+
+         
+
+        console.log("finish");
+    </script>
+</body>
+</html>

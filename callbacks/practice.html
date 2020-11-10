@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+    console.log("start");
+
+    const loginIN = (username,password,callback) =>{
+        console.log("fetching the data");
+       setTimeout(()=>{
+        
+         callback({user:username});
+       },3000)
+    }
+
+    const getCredits = (username,callback) => {
+       
+       setTimeout(()=>{
+         callback({credits:27})
+       },2000)
+    }
+
+    const getMajor = (username,callback) =>
+    {
+        setTimeout(()=>{
+         callback({major:"computer science"});
+       },2000)
+    }
+
+    const student = loginIN("Joel",1233,(std)=>{
+        console.log(std.user)
+          
+          const credits = getCredits(std.user,(crd)=>{
+             
+              console.log(crd.credits);
+
+              getMajor(std.user,(major)=>{
+                console.log(major.major);
+              })
+          })
+    })
+
+    console.log("finish");
+
+    </script>
+</body>
+</html>

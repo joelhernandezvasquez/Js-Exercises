@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>Document</title>
+</head>
+<body>
+
+    <button> Click</button>
+  
+    
+    <script>
+      
+
+        const fetchGithub = () =>
+        {
+           
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET",'https://api.github.com/users/joelhernandezvasquez/repos');
+            
+            xhr.onload = function(){
+               if(this.status==200)
+               {
+                   const response = JSON.parse(this.responseText);
+                   console.log(response);
+               }
+            }
+            xhr.send();
+        }
+         
+      const btn = document.querySelector("button");
+      btn.addEventListener("click",fetchGithub);
+      
+    </script>
+    
+</body>
+</html>

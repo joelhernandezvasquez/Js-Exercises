@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        console.log("start");
+
+         // CALLBACKS
+
+        /*  function userLogin(email,password,callback)
+         {
+             setTimeout(()=>{
+                 callback( {userEmail:email});
+             },3000)
+         }
+
+         function getUserCredentials(email,callback)
+         {
+             setTimeout(()=>{
+                callback (["get","post","put/patch"]);
+             },1000)
+             
+         }
+
+         function getLevelUser (email,callback)
+         {
+             setTimeout(() => {
+                 callback("admin");
+             }, 1200);
+         }
+
+         const user = userLogin("jhernandez98@outllook.es",1234,user =>{
+             console.log(user.userEmail);
+
+             getUserCredentials(user.userEmail, credentials =>{
+                 console.log(credentials);
+
+                getLevelUser(user.userEmail,levelUser =>{
+                   console.log(levelUser); 
+                })
+             });
+         }); */
+
+//   NOW CONVERTING IT TO PROMISES
+      
+        const userLogin = ((email,password) =>
+         {
+              return new Promise((resolve,reject) =>{
+                
+                setTimeout(()=>{
+                   if(true)
+                   {
+                       resolve({userEmail:email});
+                   }
+                   else
+                   {
+                       reject("Error");
+                   }
+                },3000)
+            
+         })
+         })
+
+         const getLevelUser =  ((email) =>{
+         {
+            return new Promise((resolve,reject)=>{
+             setTimeout(() => {
+                 resolve("admin");
+
+                 reject("error");
+             }, 1200);
+         }) 
+         }
+         })
+
+         
+         function getUserCredentials(email)
+         {
+             return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve (["get","post","put/patch"]);
+                reject("error");
+             },1000)
+             });
+         }
+         
+
+// NOW USING ASYNC/AWAIT
+
+    async function displayUserInfo()
+   {
+       const user = await userLogin("fsdfhjd",123);
+       const levelUser = await getLevelUser("sfjsdkljf");
+       const credential = await getUserCredentials("ldfksja");
+
+       console.log(user.userEmail);
+       console.log(levelUser);
+       console.log(credential);
+   }
+        
+
+
+        userLogin("jerhdfhdf",1234)
+         .then((user)=> console.log(user.userEmail))
+         .then((level)=> getLevelUser("jhernandez"))
+         .then((level)=> console.log(level))
+        .then((credential)=> getUserCredentials("jhernand"))
+        .then((credential)=> console.log(credential))
+         .catch((error)=>console.log(error))
+
+
+         // promise all
+
+         Promise.all([userLogin("jhernande",123),getLevelUser("jernande"),getUserCredentials("jfidsf")])
+         .then((data)=> console.log(data))
+         .catch((error)=> console.log(error)); 
+
+         // ASYNC WAIT
+         displayUserInfo();
+     
+         
+     console.log("finish");
+       
+    </script>
+</body>
+</html>
